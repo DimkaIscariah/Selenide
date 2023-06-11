@@ -22,7 +22,7 @@ public class CardDeliveryTest {
         open ("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Владимир");
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-        String currentDate = generateDate(4, "dd.MM.yy");
+        String currentDate = generateDate(5, "dd.MM.yy");
         $("[data-test-id=date] input").sendKeys(currentDate);
         $("[data-test-id=name] input").setValue("Дмитрий Арабей");
         $("[data-test-id=phone] input").setValue("+79056173272");
