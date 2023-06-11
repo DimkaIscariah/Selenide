@@ -19,7 +19,7 @@ public class CardDeliveryTest {
 
     @Test
     void shouldCardDelivery() {
-        open ("http://localhost:7777");
+        open ("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Владимир");
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         String currentDate = generateDate(4, "dd.MM.yy");
