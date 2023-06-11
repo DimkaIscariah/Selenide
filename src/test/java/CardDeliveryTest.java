@@ -6,7 +6,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.codeborne.selenide.Selectors.ByText;
+
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -29,7 +29,7 @@ public class CardDeliveryTest {
         $("[data-test-id=name] input").setValue("Дмитрий Арабей");
         $("[data-test-id=phone] input").setValue("+79056173272");
         $("[data-test-id=agreement]").click();
-        $("button.button").click();
+        $$("[type='button']").find(Condition.exactText("Забронировать")).click();
         $(".notification__content")
                 .shouldHave(Condition.text("Успешно! Встреча забронирована на " + currentDate), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
